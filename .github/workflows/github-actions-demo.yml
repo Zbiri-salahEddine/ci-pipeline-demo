@@ -10,3 +10,8 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - run: python job.py
       - run: echo "Contenu de test" > output.txt
+      - name: Upload output file
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-output-file
+          path: output.txt
